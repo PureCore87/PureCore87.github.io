@@ -1,29 +1,36 @@
-PURECORE — COMPLETE WEBSITE UPDATE
-English content based on the two supplied product descriptions dated 16 October 2026.
+PURECORE / SIGNATURE EDITION v7
+
+Complete static website for GitHub Pages. All website copy is English.
 
 UPLOAD
-1. Extract this ZIP.
-2. Upload all seven HTML files to your existing repository root, replacing them.
-3. Open assets and upload all six asset files there.
-4. Commit the uploads to main. The website continues to use your existing Pages setup.
+1. Extract this ZIP first.
+2. Upload all seven .html files into your repository root.
+3. Upload the assets folder, preserving its name and structure.
+4. Commit changes and allow GitHub Pages to finish deployment.
+5. Open https://purecore87.github.io/ and refresh the page.
 
-CONTENTS
-index.html, apps.html, signal.html, arx.html, about.html, support.html, privacy.html
-assets/style.css — original shared website styling
-assets/icons-v4.css — existing icon sizing and placement
-assets/icons-v4.js — existing background-removal display treatment
-assets/site-v6.css — expanded page styling and Ambient Glow on every page hero
-assets/signal.png, assets/arx.png — unchanged original PNGs
+Do not upload this ZIP as a single repository file. Its contents are the website.
+Old, unused CSS files can remain; all pages load the new signature-v7 files.
 
-NOTES
-Both original PNG files are unchanged. No generated screenshots or app interfaces are included.
-The source text documents are not included in the public website package.
-No personal name, address, phone number or private project information has been added.
-The supplied documents contain no support email address, so no address has been invented.
-No unconfirmed price, public release date, purchase button or download link has been added.
-This package is prepared for manual upload and has not been published by this process.
+FEATURES
+- Consistent centred Signal and ARX Core product heroes.
+- Original app PNGs and original PureCore logo construction preserved.
+- Equal product cards with Signal violet/cyan and ARX orange accents.
+- Continuous ambient light and decorative orbit animation.
+- Gentle scroll reveals and reading progress; content works without JavaScript.
+- Pause motion button; system reduced-motion preference takes priority.
+- Signal is labelled Closed beta; no invented store, price or beta-access links.
+- No analytics, third-party fonts, cookies, account or contact form.
+- No personal contact data included.
 
-VERSION 6
-Signal and ARX Core share the same fully centred product header.
-Signal is labelled Closed beta. Ambient Glow completes a seamless 16-second cycle.
-Reduced-motion settings use a static centred glow.
+This archive contains full replacement source files and original image assets.
+The app descriptions reflect the supplied development documentation dated
+16 October 2026. No fabricated app screens or performance metrics are included.
+
+VALIDATION
+All local links, anchors, seven pages, JavaScript syntax and interaction logic
+were checked. Original PNGs and the existing icon-processing script are byte
+identical. Foreground contrast against the base surface exceeds 4.5:1.
+Responsive rules include 320px phones and narrow tablets. A full browser/device
+visual test was unavailable in this environment and remains to be completed
+after uploading. No live GitHub files have been changed by this package.
