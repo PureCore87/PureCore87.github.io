@@ -5,40 +5,74 @@
   height: 88px;
   object-fit: contain;
   flex: none;
+  margin: 0;
   background: transparent;
-}
-
-/* Match the visible artwork while preserving both original images. */
-.arx-icon {
-  transform: scale(.86);
   transform-origin: center;
 }
 
-.feature-head .signal-icon,
-.arx-home-heading .arx-icon {
-  width: 88px;
-  height: 88px;
+/* Align the visible artwork without changing either original PNG. */
+.signal-icon { transform: translate(1.24%, 1.32%); }
+.arx-icon { transform: translateY(-3.44%) scale(.86); }
+
+.home-grid .feature,
+.home-grid .aside-project,
+.app-card {
+  position: relative;
+  --project-icon-size: 88px;
+  --project-icon-top: 36px;
+  --project-icon-right: 36px;
 }
 
-.arx-home-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  width: 100%;
-  margin-bottom: 10px;
+.home-grid .aside-project {
+  --project-icon-top: 35px;
+  --project-icon-right: 0px;
+  padding-top: 36px;
 }
 
-.arx-home-heading h2 { margin-bottom: 0; }
-.arx-home-heading .eyebrow { margin-bottom: 12px; }
+.app-card {
+  --project-icon-size: 66px;
+  --project-icon-top: 30px;
+  --project-icon-right: 30px;
+}
 
+.home-grid .signal-icon,
+.home-grid .arx-icon,
 .app-card .signal-icon,
 .app-card .arx-icon {
-  width: 66px;
-  height: 66px;
+  position: absolute;
+  top: var(--project-icon-top);
+  right: var(--project-icon-right);
+  width: var(--project-icon-size);
+  height: var(--project-icon-size);
 }
 
-.app-card .card-heading > div { min-width: 0; }
+.home-grid .feature-head,
+.home-grid .arx-home-heading,
+.app-card .card-heading {
+  display: block;
+  width: 100%;
+  min-height: var(--project-icon-size);
+  padding-right: calc(var(--project-icon-size) + 16px);
+  margin-bottom: 18px;
+}
+
+.feature-head > div,
+.arx-home-heading > div,
+.card-heading > div { min-width: 0; }
+
+.home-grid .feature-head .eyebrow,
+.home-grid .arx-home-heading .eyebrow { margin: 0 0 18px; }
+
+.home-grid .feature-head h2,
+.home-grid .arx-home-heading h2,
+.app-card .card-heading h2 { margin: 0; }
+
+.app-card .card-heading { margin-bottom: 16px; }
+.app-card .card-heading .eyebrow {
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
 
 .arx-project-art {
   display: flex;
@@ -56,22 +90,47 @@
 .arx-project-hero p { margin-left: auto; margin-right: auto; }
 
 @media (max-width: 899px) {
-  .feature-head .signal-icon,
-  .arx-home-heading .arx-icon {
-    width: 68px;
-    height: 68px;
+  .home-grid .feature,
+  .home-grid .aside-project {
+    --project-icon-size: 68px;
+    --project-icon-top: 28px;
+    --project-icon-right: 28px;
+  }
+
+  .home-grid .aside-project {
+    --project-icon-top: 27px;
+    --project-icon-right: 0px;
+    padding-top: 28px;
   }
 }
 
 @media (max-width: 680px) {
-  .feature-head .signal-icon,
-  .arx-home-heading .arx-icon {
-    width: 61px;
-    height: 61px;
+  .home-grid .feature,
+  .home-grid .aside-project {
+    --project-icon-size: 61px;
+    --project-icon-top: 23px;
+    --project-icon-right: 21px;
   }
 
-  .arx-home-heading { margin-bottom: 10px; }
-  .arx-home-heading .eyebrow { margin-bottom: 8px; }
+  .home-grid .aside-project {
+    --project-icon-right: 0px;
+    padding-top: 23px;
+  }
+
+  .home-grid .feature-head,
+  .home-grid .arx-home-heading {
+    padding-right: calc(var(--project-icon-size) + 14px);
+    margin-bottom: 13px;
+  }
+
+  .home-grid .feature-head .eyebrow,
+  .home-grid .arx-home-heading .eyebrow { margin-bottom: 13px; }
+
+  .app-card {
+    --project-icon-top: 24px;
+    --project-icon-right: 24px;
+  }
+
   .arx-project-art { margin-bottom: 17px; }
 
   .app-heading .signal-icon,
