@@ -1,0 +1,45 @@
+/* Ambient Glow: transparent edges and a seamless 24-second cycle. */
+.home-hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: min(90%, 760px);
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 48% 48% at 50% 50%,
+    rgba(255, 138, 35, .14) 0%,
+    rgba(255, 138, 35, .10) 30%,
+    rgba(255, 138, 35, .045) 60%,
+    rgba(255, 138, 35, .012) 82%,
+    rgba(255, 138, 35, 0) 100%
+  );
+  background-repeat: no-repeat;
+  opacity: .45;
+  transform: translateX(0) scale(1);
+  animation: purecore-ambient-soft 24s ease-in-out infinite;
+}
+
+@keyframes purecore-ambient-soft {
+  0%, 100% {
+    opacity: .45;
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    opacity: .8;
+    transform: translateX(9%) scale(1.02);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero::before {
+    animation: none;
+    opacity: .45;
+    transform: none;
+  }
+}
