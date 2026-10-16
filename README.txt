@@ -1,42 +1,24 @@
-PURECORE / MIDNIGHT JOURNAL — ICON UPDATE
-Real Data. Clear Insight.
+PURECORE — COMPLETE WEBSITE UPDATE
+English content based on the two supplied product descriptions dated 16 October 2026.
 
-UPLOAD TO YOUR EXISTING GITHUB PAGES REPOSITORY
+UPLOAD
 1. Extract this ZIP.
-2. Upload the HTML files to the repository root, replacing their existing versions.
-3. Open assets in GitHub and upload its contents there, replacing existing files.
-4. Commit to main and reload your website after GitHub Pages finishes updating.
+2. Upload all seven HTML files to your existing repository root, replacing them.
+3. Open assets and upload all six asset files there.
+4. Commit the uploads to main. The website continues to use your existing Pages setup.
 
-UPDATED FILES
-index.html — Signal and ARX Core icons on the homepage
-apps.html — both app icons in the collection
-signal.html — transparent display of the Signal icon
-arx.html — ARX Core icon on the project page
-assets/icons.css — transparent icon surfaces and ARX Core placement
-assets/icons.js — the same display-only background treatment as the approved preview
-assets/arx.png — original supplied ARX Core PNG
+CONTENTS
+index.html, apps.html, signal.html, arx.html, about.html, support.html, privacy.html
+assets/style.css — original shared website styling
+assets/icons-v4.css — existing icon sizing and placement
+assets/icons-v4.js — existing background-removal display treatment
+assets/site-v5.css — expanded page styling and Ambient Glow on every page hero
+assets/signal.png, assets/arx.png — unchanged original PNGs
 
-ALSO INCLUDED
-about.html, support.html and privacy.html are unchanged current GitHub copies.
-assets/signal.png is the unchanged original Signal icon from GitHub.
-assets/style.css is the unchanged current GitHub stylesheet.
-
-ORIGINAL ARTWORK
-Both PNG files retain their original bytes. The website displays them through
-a canvas treatment that removes the connected dark exterior and preserves
-enclosed dark artwork, including the ARX Core lock. The orange glow uses
-transparency outside the artwork. No image generation or redrawing is used.
-
-PREVIEW
-Use GitHub Pages or another HTTP/HTTPS static server. Opening an HTML file
-directly from local storage may prevent the browser from reading image pixels;
-in that case the original image remains visible as a fallback. The site and
-navigation still work without JavaScript, with the original icons displayed.
-
-Network Check describes latency, jitter and packet loss only.
-Contact and publisher details remain open, as in the current site.
-
-VALIDATION
-Links, image and script paths, original PNG hashes, JavaScript syntax and
-background-treatment pixel behavior were checked. Browser layout QA was
-unavailable in this environment. This package has not been uploaded to GitHub.
+NOTES
+Both original PNG files are unchanged. No generated screenshots or app interfaces are included.
+The source text documents are not included in the public website package.
+No personal name, address, phone number or private project information has been added.
+The supplied documents contain no support email address, so no address has been invented.
+No unconfirmed price, public release date, purchase button or download link has been added.
+This package is prepared for manual upload and has not been published by this process.
