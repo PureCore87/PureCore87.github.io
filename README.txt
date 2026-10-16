@@ -12,7 +12,7 @@ index.html, apps.html, signal.html, arx.html, about.html, support.html, privacy.
 assets/style.css — original shared website styling
 assets/icons-v4.css — existing icon sizing and placement
 assets/icons-v4.js — existing background-removal display treatment
-assets/site-v5.css — expanded page styling and Ambient Glow on every page hero
+assets/site-v6.css — expanded page styling and Ambient Glow on every page hero
 assets/signal.png, assets/arx.png — unchanged original PNGs
 
 NOTES
@@ -22,3 +22,8 @@ No personal name, address, phone number or private project information has been 
 The supplied documents contain no support email address, so no address has been invented.
 No unconfirmed price, public release date, purchase button or download link has been added.
 This package is prepared for manual upload and has not been published by this process.
+
+VERSION 6
+Signal and ARX Core share the same fully centred product header.
+Signal is labelled Closed beta. Ambient Glow completes a seamless 16-second cycle.
+Reduced-motion settings use a static centred glow.
