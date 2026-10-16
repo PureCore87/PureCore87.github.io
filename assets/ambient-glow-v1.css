@@ -1,0 +1,45 @@
+/* PureCore Ambient Glow: a continuous 24-second round trip. */
+.home-hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: min(100%, 680px);
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 75% 45%,
+    rgba(255, 138, 35, .14),
+    transparent 65%
+  );
+  opacity: .35;
+  transform: translateX(-3%) scale(1);
+  animation: purecore-ambient-glow 12s ease-in-out infinite alternate;
+}
+
+@keyframes purecore-ambient-glow {
+  0% {
+    opacity: .35;
+    transform: translateX(-3%) scale(1);
+  }
+  50% {
+    opacity: .8;
+    transform: translateX(0) scale(1.015);
+  }
+  100% {
+    opacity: .5;
+    transform: translateX(3%) scale(1.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero::before {
+    animation: none;
+    opacity: .35;
+    transform: none;
+  }
+}
