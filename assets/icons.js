@@ -1,102 +1,120 @@
-(() => {
-  'use strict';
+.signal-icon,
+.arx-icon {
+  display: block;
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  flex: none;
+  background: transparent;
+}
 
-  const cache = new Map();
+/* Match the visible artwork while preserving both original images. */
+.arx-icon {
+  transform: scale(.86);
+  transform-origin: center;
+}
 
-  function removeExteriorBlack(frame, width, height) {
-    const pixels = frame.data;
-    const count = width * height;
-    const exterior = new Uint8Array(count);
-    const queue = new Uint32Array(count);
-    let read = 0;
-    let write = 0;
+.feature-head .signal-icon,
+.arx-home-heading .arx-icon {
+  width: 88px;
+  height: 88px;
+}
 
-    function add(index) {
-      if (exterior[index]) return;
-      const at = index * 4;
-      if (Math.max(pixels[at], pixels[at + 1], pixels[at + 2]) > 64) return;
-      exterior[index] = 1;
-      queue[write++] = index;
-    }
+.arx-home-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 10px;
+}
 
-    for (let x = 0; x < width; x++) {
-      add(x);
-      add((height - 1) * width + x);
-    }
-    for (let y = 1; y < height - 1; y++) {
-      add(y * width);
-      add(y * width + width - 1);
-    }
-    while (read < write) {
-      const index = queue[read++];
-      const x = index % width;
-      if (x > 0) add(index - 1);
-      if (x < width - 1) add(index + 1);
-      if (index >= width) add(index - width);
-      if (index + width < count) add(index + width);
-    }
+.arx-home-heading h2 { margin-bottom: 0; }
+.arx-home-heading .eyebrow { margin-bottom: 12px; }
 
-    // Preserve enclosed black artwork, including the ARX Core lock.
-    // Represent only the exterior background and glow using transparency.
-    for (let index = 0; index < count; index++) {
-      if (!exterior[index]) continue;
-      const at = index * 4;
-      const maximum = Math.max(pixels[at], pixels[at + 1], pixels[at + 2]);
-      if (!maximum) {
-        pixels[at + 3] = 0;
-        continue;
-      }
-      pixels[at] = Math.round(pixels[at] * 255 / maximum);
-      pixels[at + 1] = Math.round(pixels[at + 1] * 255 / maximum);
-      pixels[at + 2] = Math.round(pixels[at + 2] * 255 / maximum);
-      pixels[at + 3] = maximum;
-    }
-    return frame;
+.app-card .signal-icon,
+.app-card .arx-icon {
+  width: 66px;
+  height: 66px;
+}
+
+.app-card .card-heading > div { min-width: 0; }
+
+.arx-project-art {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.app-heading .signal-icon,
+.arx-project-art .arx-icon {
+  width: 105px;
+  height: 105px;
+}
+
+.arx-project-hero { text-align: center; }
+.arx-project-hero p { margin-left: auto; margin-right: auto; }
+
+.home-grid .project-heading,
+.app-card .project-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 16px;
+  width: 100%;
+}
+
+.project-heading > div { min-width: 0; }
+.home-grid .project-heading { margin-bottom: 18px; }
+.home-grid .project-heading .eyebrow { margin: 0 0 18px; }
+.home-grid .project-heading h2,
+.app-card .project-heading h2 { margin: 0; }
+.aside-project { padding-top: 36px; }
+
+.app-card .project-heading {
+  min-height: 66px;
+  margin-bottom: 16px;
+}
+
+.app-card .project-heading .eyebrow {
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+
+@media (max-width: 899px) {
+  .aside-project { padding-top: 28px; }
+
+  .feature-head .signal-icon,
+  .arx-home-heading .arx-icon {
+    width: 68px;
+    height: 68px;
+  }
+}
+
+@media (max-width: 680px) {
+  .aside-project { padding-top: 23px; }
+
+  .home-grid .project-heading {
+    gap: 14px;
+    margin-bottom: 13px;
   }
 
-  function loadArtwork(source) {
-    if (cache.has(source)) return cache.get(source);
-    const task = new Promise((resolve, reject) => {
-      const original = new Image();
-      original.onload = () => {
-        try {
-          const width = original.naturalWidth;
-          const height = original.naturalHeight;
-          const canvas = document.createElement('canvas');
-          canvas.width = width;
-          canvas.height = height;
-          const ctx = canvas.getContext('2d', { willReadFrequently: true });
-          if (!ctx) throw new Error('Canvas unavailable');
-          ctx.drawImage(original, 0, 0);
-          const frame = ctx.getImageData(0, 0, width, height);
-          ctx.putImageData(removeExteriorBlack(frame, width, height), 0, 0);
-          resolve(canvas);
-        } catch (error) {
-          reject(error);
-        }
-      };
-      original.onerror = () => reject(new Error('Icon unavailable'));
-      original.src = source;
-    });
-    cache.set(source, task);
-    return task;
+  .home-grid .project-heading .eyebrow {
+    margin-bottom: 13px;
   }
 
-  document.querySelectorAll('img[data-transparent-icon]').forEach(image => {
-    loadArtwork(image.currentSrc || image.src).then(artwork => {
-      if (!image.isConnected) return;
-      const canvas = document.createElement('canvas');
-      canvas.width = artwork.width;
-      canvas.height = artwork.height;
-      canvas.className = image.className;
-      canvas.setAttribute('role', 'img');
-      canvas.setAttribute('aria-label', image.alt);
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
-      ctx.drawImage(artwork, 0, 0);
-      image.replaceWith(canvas);
-    }).catch(() => {
-      // Keep the original image as a fallback if processing is unavailable.
-    });
-  });
-})();
+  .feature-head .signal-icon,
+  .arx-home-heading .arx-icon {
+    width: 61px;
+    height: 61px;
+  }
+
+  .arx-project-art { margin-bottom: 17px; }
+
+  .app-heading .signal-icon,
+  .arx-project-art .arx-icon {
+    width: 78px;
+    height: 78px;
+  }
+}
