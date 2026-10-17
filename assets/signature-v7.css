@@ -22,3 +22,11 @@
 @media(max-width:360px){.product-card-title h2{font-size:31px}.card-art{width:60px;height:60px}.product-card-title p{font-size:12px}.card-top{align-items:start;flex-direction:column;gap:9px}.product-hero h1{font-size:54px}.editorial-hero h1{font-size:40px}.card-bottom{align-items:start;flex-direction:column}.card-bottom>span{max-width:none}.round-link{width:100%;justify-content:space-between}.hero-actions{gap:10px 18px}.hero-actions .text-link{font-size:12px}}
 
 @media(min-width:761px) and (max-width:880px){.product-collection{grid-template-columns:1fr}.card-top{flex-direction:row;align-items:center}.card-description{min-height:0}.card-bottom{flex-direction:row;align-items:center}.round-link{width:auto}}
+
+/* Product pages: centre the orbiting core on the 1px dashed stroke. */
+.product-orbit .orbit-one::after {
+  top: -.5px;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+}
