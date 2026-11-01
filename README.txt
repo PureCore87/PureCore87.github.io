@@ -1,36 +1,42 @@
-PURECORE / SIGNATURE EDITION v7
+PURECORE — COMPLETE WEBSITE
+Updated 1 November 2026
 
-Complete static website for GitHub Pages. All website copy is English.
+Complete package: all eight HTML pages, all three original app icons, both stylesheets and both scripts.
+Includes PurePDF and the homepage orbit correction. No earlier ZIP or patch is needed.
+Ready for the existing GitHub Pages repository.
+
+NEW
+purepdf.html
+assets/purepdf-v1.css
+assets/purepdf.png — original PurePDF icon, unchanged
+
+UPDATED
+assets/signature-v7.css — homepage orbit point centred on the dashed stroke
+index.html — PurePDF collection entry and document workflow link
+apps.html — three apps and PurePDF entry
+about.html — PurePDF added to studio description
+support.html — PurePDF availability, help section and questions
+privacy.html — PurePDF development data-flow overview
+README.txt
 
 UPLOAD
-1. Extract this ZIP first.
-2. Upload all seven .html files into your repository root.
-3. Upload the assets folder, preserving its name and structure.
-4. Commit changes and allow GitHub Pages to finish deployment.
-5. Open https://purecore87.github.io/ and refresh the page.
+Extract this ZIP first. Upload its contents to the root of PureCore87/PureCore87.github.io.
+Upload the assets folder contents into the repository assets folder, keeping the paths.
+Replace existing files with the same names. Do not upload the ZIP itself as the website.
+No PHP server, build process or new hosting account is required.
+This package does not publish itself; commit the uploaded files on GitHub to update Pages.
+If GitHub creates a CNAME file later for your custom domain, preserve that file.
 
-Do not upload this ZIP as a single repository file. Its contents are the website.
-Old, unused CSS files can remain; all pages load the new signature-v7 files.
+CONTENT
+English copy based on PurePDF-Webseitentexte-Ausfuehrlich.txt, 1 November 2026.
+PurePDF is shown as in development. No price, minimum Android version or store link is invented.
+The original 1024×1024 PurePDF PNG is included unchanged on Home, Apps and the PurePDF product page.
+No replacement icon or fake app screenshot is used.
+Existing Signal / ARX Core app pages, icons, common stylesheet, animation and icon scripts are unchanged.
 
-FEATURES
-- Consistent centred Signal and ARX Core product heroes.
-- Original app PNGs and original PureCore logo construction preserved.
-- Equal product cards with Signal violet/cyan and ARX orange accents.
-- Continuous ambient light and decorative orbit animation.
-- Gentle scroll reveals and reading progress; content works without JavaScript.
-- Pause motion button; system reduced-motion preference takes priority.
-- Signal is labelled Closed beta; no invented store, price or beta-access links.
-- No analytics, third-party fonts, cookies, account or contact form.
-- No personal contact data included.
+CHECKS
+All local links, target anchors, unique IDs and three product entries checked.
+Browser layout checked at 320, 390 and 820 pixel frame widths and desktop.
+No horizontal overflow found in the tested layouts; PurePDF FAQ and motion pause checked.
 
-This archive contains full replacement source files and original image assets.
-The app descriptions reflect the supplied development documentation dated
-16 October 2026. No fabricated app screens or performance metrics are included.
-
-VALIDATION
-All local links, anchors, seven pages, JavaScript syntax and interaction logic
-were checked. Original PNGs and the existing icon-processing script are byte
-identical. Foreground contrast against the base surface exceeds 4.5:1.
-Responsive rules include 320px phones and narrow tablets. A full browser/device
-visual test was unavailable in this environment and remains to be completed
-after uploading. No live GitHub files have been changed by this package.
+Open index.html to view the site locally or use your existing GitHub Pages deployment.
