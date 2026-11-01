@@ -1,0 +1,32 @@
+/* PurePDF additions. Shared PureCore artwork and motion remain unchanged. */
+.theme-pdf,.pdf-card{--accent:#a9c6ff;--card-color:#a9c6ff}
+.pdf-title-accent,.theme-pdf h1 em,.theme-pdf .section-heading em{color:#a9c6ff}
+.product-card.pdf-card{grid-column:1/-1;border-color:#6d94d852;background:linear-gradient(135deg,#182741dd,#12171c 72%)}
+.product-card.pdf-card::before{background:radial-gradient(ellipse at 80% 25%,#4e8eff20,transparent 65%);animation-delay:-3s}
+.pdf-card .status,.theme-pdf .status{color:#c4d7ff;border-color:#8dabdf65;background:#528dff0a}
+.pdf-card .status i,.theme-pdf .status i{background:#a9c6ff}
+.theme-pdf .product-hero::before{background:radial-gradient(ellipse 38% 50% at 50% 40%,#538bff22,transparent 100%)}
+.theme-pdf .product-orbit .orbit-one{border-color:#a9c6ff55}
+.theme-pdf .product-orbit .orbit-two{border-color:#79bfff38}
+.theme-pdf .product-orbit .orbit-one::after{background:#c3d8ff;box-shadow:0 0 12px #81afff80}
+.purepdf-icon{display:block;object-fit:contain;width:100%;height:100%;background:transparent;flex:none}
+.theme-pdf .product-art{position:relative;z-index:1}
+.theme-pdf .feature-item:nth-child(4n+1){border-color:#8daee16b}
+.pdf-workflow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;list-style:none;margin:0;padding:0}
+.pdf-workflow li{border-top:1px solid #8daee16b;padding-top:20px;min-width:0}
+.pdf-workflow .eyebrow{display:block;font-size:10px;margin-bottom:13px}
+.pdf-workflow h3{font-size:26px;line-height:1.2}
+.pdf-workflow p{font-size:14px;line-height:1.85;margin-bottom:14px}
+.theme-pdf .technical-detail{margin-top:20px}
+@media(min-width:881px){
+  .product-card.pdf-card{display:grid;grid-template-columns:1fr 1fr;column-gap:42px}
+  .pdf-card .card-top,.pdf-card .card-bottom{grid-column:1/-1}
+  .pdf-card .product-card-title{grid-column:1;grid-row:2/4;align-self:center;margin:0 0 24px}
+  .pdf-card .card-description{grid-column:2;grid-row:2;min-height:0;margin-bottom:20px}
+  .pdf-card .feature-tags{grid-column:2;grid-row:3}
+  .pdf-card .card-bottom{flex-direction:row;align-items:center}
+  .pdf-card .round-link{width:auto}
+  .availability-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:440px){.pdf-workflow{grid-template-columns:1fr;gap:24px}.pdf-workflow h3{font-size:26px}.pdf-workflow p{font-size:15px;line-height:1.8}}
+@media print{.product-card.pdf-card{background:#fff;border-color:#ccc}.theme-pdf h1 em,.pdf-title-accent{color:#333}}
