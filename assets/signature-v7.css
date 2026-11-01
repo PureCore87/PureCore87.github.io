@@ -30,3 +30,11 @@
   right: auto;
   transform: translate(-50%, -50%);
 }
+
+/* Homepage: keep the core's centre on the dashed orbit while it turns. */
+.page-index .core-scene .orbit-one::after {
+  top: -.5px;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+}
